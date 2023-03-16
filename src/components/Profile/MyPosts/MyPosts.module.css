@@ -1,0 +1,11 @@
+.postsBlock {
+    padding: 10px;
+    color: #525252;
+    -webkit-text-stroke-width: thin;
+}
+.postsBlock h3 {
+    -webkit-text-stroke-width: thick;
+}
+.posts {
+    margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+.header {
+    grid-area: h;
+    background-color: #525252;
+    user-select: none;
+  }
+.header img {
+    width: 60px;
+    padding-left: 10px;
+  }
+.loginBlock {
+    float: right;
+    padding: 20px;
+    color: white;
+    -webkit-text-stroke-width: thin;
+  }
+.loginBlock a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-text-stroke-width: thin;
+ }
+ .loginBlock a.active {
+  color: #ffd700;
+}

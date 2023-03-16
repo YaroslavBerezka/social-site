@@ -1,0 +1,14 @@
+.userPhoto {
+    width: 100px;
+    height: 100px;
+}
+.users {
+    display: grid;
+    grid-template-areas:
+    "p p p p p"
+    "u u u u u"
+    "u u u u u";
+}
+.user {
+    grid-area: u;
+}
