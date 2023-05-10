@@ -1,9 +1,21 @@
 {
     "cSpell.words": [
+        "antd",
         "Autorized",
+        "codepaths",
+        "Formik",
         "kbzda",
         "Loshara",
+        "Misha",
         "predeploy",
-        "UNFOLLOW"
-    ]
+        "Sveta",
+        "tsbuildinfo",
+        "UNFOLLOW",
+        "unfollowed",
+        "unfollowing",
+        "Volodya",
+        "webrtc",
+        "Yaroslav"
+    ],
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

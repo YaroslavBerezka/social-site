@@ -1,0 +1,9 @@
+.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #525252;
+    color: red;
+    font-size: 40px;
+    height: 500px;
+  }

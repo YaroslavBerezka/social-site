@@ -6,3 +6,20 @@
     display: grid;
     grid-column-gap: 10px;
 }
+.mainPhoto {
+    max-width: 200px;
+}
+.status {
+    padding-left: 10px;
+    cursor: pointer;
+}
+.allContact {
+    padding-left: 10px;
+}
+.contact {
+    
+}
+.formSummaryError {
+    padding: 5px 0px;
+    color: red;
+}

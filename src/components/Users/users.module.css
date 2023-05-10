@@ -1,14 +1,27 @@
 .userPhoto {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
 }
 .users {
-    display: grid;
-    grid-template-areas:
-    "p p p p p"
-    "u u u u u"
-    "u u u u u";
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px;
 }
 .user {
-    grid-area: u;
+    
+    padding-left: 10px;
+}
+.infoUsers {
+    display: block;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+}
+.followingUsers {
+    width: 150px;
+    text-align: center;
+    padding: 5px;
 }

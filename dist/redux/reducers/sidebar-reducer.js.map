@@ -1,0 +1,1 @@
+{"version":3,"file":"sidebar-reducer.js","sourceRoot":"","sources":["../../../src/redux/reducers/sidebar-reducer.ts"],"names":[],"mappings":";;AAAA,MAAM,YAAY,GAAI,EAErB,CAAC;AAEF,MAAM,cAAc,GAAG,CAAC,KAAK,GAAG,YAAY,EAAG,MAAW,EAAE,EAAE;IAE1D,OAAO,KAAK,CAAC;AACjB,CAAC,CAAC;AAEF,kBAAe,cAAc,CAAC"}
