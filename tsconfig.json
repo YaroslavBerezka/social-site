@@ -17,6 +17,5 @@
     },
     "types": [ "@types/webrtc", "jest", "node",  ],
   }
-  
 }
 
