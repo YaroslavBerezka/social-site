@@ -12,7 +12,7 @@ const state = {
 
 describe("profile-reducer component", () => {
   test('length of posts should be incremented',() => {
-    const action =  actionsProfile.addPost("Loshara");
+    const action =  actionsProfile.addPost("Babe");
     const newState = profileReducer(state, action);
 
     expect(newState.posts.length).toBe(3);
@@ -26,10 +26,10 @@ describe("profile-reducer component", () => {
   });
 
   test('message of new post should be correct',() => {
-    const action =  actionsProfile.addPost("Loshara");
+    const action =  actionsProfile.addPost("Babe");
     const newState = profileReducer(state, action);
 
-    expect(newState.posts[2].message).toBe("Loshara");
+    expect(newState.posts[2].message).toBe("Babe");
   });
 
   test('length of after deleting length of messages should be changed',() => {
