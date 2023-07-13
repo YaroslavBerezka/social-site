@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 export const InputGithub: React.FC<PropsType> = React.memo((props) => {
     const {currentTerm, onSubmit} = props;
     const [inputValue, setInputValue] = useState('');
-
+    
     useEffect(() => {
         setInputValue(currentTerm as string);
     }, [currentTerm])
@@ -22,3 +22,5 @@ type PropsType = {
     onSubmit: (value: string) => void
     currentTerm: string | null 
 };
+
+

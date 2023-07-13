@@ -12,6 +12,7 @@ export const Chat: React.FC = React.memo(() => {
     
     useEffect(()=> {
         dispatch(startMessagesListening());
+        
         return () => {
             dispatch(stopMessagesListening());
         }

@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { FormAction } from "redux-form";
-import { ChatMessageType, StatusType, chatAPI } from "../chat-api";
 import { BaseThunkActionType } from "../../redux/redux-store";
+import { ChatMessageType, StatusType, chatAPI } from "../chat-api";
 import { ActionsChatTypes, actionsChat } from "../../redux/reducers/chat-reducer";
 
 let _newMessageHandler: ((messages: ChatMessageType[]) => void) |  null  = null;

@@ -1,21 +1,29 @@
 {
-    "cSpell.words": [
-        "antd",
-        "Autorized",
-        "codepaths",
-        "Formik",
-        "kbzda",
-        "Loshara",
-        "Misha",
-        "predeploy",
-        "Sveta",
-        "tsbuildinfo",
-        "UNFOLLOW",
-        "unfollowed",
-        "unfollowing",
-        "Volodya",
-        "webrtc",
-        "Yaroslav"
-    ],
-    "typescript.tsdk": "node_modules\\typescript\\lib"
+  "cSpell.words": [
+    "antd",
+    "Autorized",
+    "codepaths",
+    "Formik",
+    "kbzda",
+    "Loshara",
+    "Misha",
+    "predeploy",
+    "Sveta",
+    "tsbuildinfo",
+    "UNFOLLOW",
+    "unfollowed",
+    "unfollowing",
+    "Volodya",
+    "webrtc",
+    "Yaroslav"
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnPaste": false, // required
+  "editor.formatOnType": false, // required
+  "editor.formatOnSave": true, // optional
+  "editor.formatOnSaveMode": "file", // required to format on save
+  "files.autoSave": "onFocusChange", // optional but recommended
+  "vs-code-prettier-eslint.prettierLast": true,
+  "liveServer.settings.port": 5501
 }
