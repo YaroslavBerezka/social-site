@@ -1,10 +1,10 @@
-import { PhotosType, ProfileType } from "../types/types";
-import { ResponseType, ResultCodes, instance } from "./api";
+import { IPhotos, IProfile } from "../interfaces/interfaces"
+import { ResponseType, ResultCodes, instance } from "./api"
 
 export const profileAPI = {
     getProfile(userId: number) {
         return  instance
-                     .get<ProfileType>(`profile/${userId}`)
+                     .get<IProfile>(`profile/${userId}`)
                      .then(response => response.data);
     },
     getStatus(userId: number) {
@@ -22,19 +22,19 @@ export const profileAPI = {
         formData.append('image', photoFile);
 
         return  instance
-                    .put<ResponseSavePhotoType>(`profile/photo`, formData,  {headers : {'Content-Type': 'multipart/from-data'}})
+                    .put<IResponseSavePhoto>(`profile/photo`, formData,  {headers : {'Content-Type': 'multipart/from-data'}})
                     .then(response => response.data);
     },
-    saveProfile(profile: ProfileType) {
+    saveProfile(profile: IProfile) {
         return  instance
                     .put<ResponseType>(`profile`, profile)
                     .then(response => response.data);
     },
 };
 
-type ResponseSavePhotoType = {
+interface IResponseSavePhoto {
     data: {
-        photos: PhotosType
+        photos: IPhotos
     }
     resultCode: ResultCodes
     messages: Array<string>

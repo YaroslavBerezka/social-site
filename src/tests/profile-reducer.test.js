@@ -1,4 +1,4 @@
-import profileReducer, { actionsProfile } from "../redux/reducers/profile-reducer";
+import profileReducer, { actionsProfile } from "../redux/reducers/profile-reducer"
 
 const state = {
   posts: [

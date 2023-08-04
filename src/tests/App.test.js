@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
+import { createRoot } from "react-dom/client"
 import { SocialApp } from "../SocialApp"
-import { createRoot } from "react-dom/client";
 
 test('render without crashing', () => {
   const div = document.createElement('div');

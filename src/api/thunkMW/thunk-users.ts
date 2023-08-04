@@ -1,8 +1,8 @@
-import { Dispatch } from "redux";
-import { usersAPI } from "../users-api";
-import { ResponseType, ResultCodes } from "../api";
-import { BaseThunkActionType } from "../../redux/redux-store";
-import { ActionsUsersTypes, FilterType, actionsUsers } from "../../redux/reducers/users-reducer";
+import { Dispatch } from "redux"
+import { ActionsUsersTypes, FilterType, actionsUsers } from "../../redux/reducers/users-reducer"
+import { BaseThunkActionType } from "../../redux/redux-store"
+import { ResultCodes } from "../api"
+import { usersAPI } from "../users-api"
 
 export const requestUsers = (pageNumber: number, pageSize: number, filter: FilterType): ThunkActionType => async (dispatch) => {
       try {

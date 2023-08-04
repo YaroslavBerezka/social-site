@@ -1,10 +1,10 @@
-import { UserType } from "../types/types";
-import { ResponseType, instance } from "./api";
+import { IUser } from "../interfaces/interfaces"
+import { ResponseType, instance } from "./api"
 
 export const usersAPI = {
     getUsers(currentPage = 1, pageSize = 10, term: string = "", friend: null | boolean = null) {
         return  instance
-                     .get<ResponseGetUsersType>(`users?page=${currentPage}&count=${pageSize}
+                     .get<IResponseGetUsers>(`users?page=${currentPage}&count=${pageSize}
                                                 &term=${term}` + (friend === null ? "" 
                                                                                   : `&friend=${friend}`))
                      .then(response => response.data);
@@ -21,8 +21,8 @@ export const usersAPI = {
     },
 };
 
-type ResponseGetUsersType = {
-    items: Array<UserType>
+interface IResponseGetUsers {
+    items: Array<IUser>
     totalCount: number
     error: string | null
 };

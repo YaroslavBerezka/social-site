@@ -1,14 +1,16 @@
-import appReducer from "./reducers/app-reducer";
-import authReducer from "./reducers/auth-reducer";
-import { reducer as formReducer } from "redux-form";
-import usersReducer from "./reducers/users-reducer";
-import { chatReducer } from "./reducers/chat-reducer";
-import sidebarReducer from "./reducers/sidebar-reducer";
-import profileReducer from "./reducers/profile-reducer";
-import messagesReducer from "./reducers/messages-reducer";
-import { Action, applyMiddleware, combineReducers, 
-         legacy_createStore as createStore } from "redux";
-import thunkMiddleware, { ThunkAction } from "redux-thunk";
+import {
+    Action, applyMiddleware, combineReducers,
+    legacy_createStore as createStore
+} from "redux"
+import { reducer as formReducer } from "redux-form"
+import thunkMiddleware, { ThunkAction } from "redux-thunk"
+import appReducer from "./reducers/app-reducer"
+import authReducer from "./reducers/auth-reducer"
+import { chatReducer } from "./reducers/chat-reducer"
+import messagesReducer from "./reducers/messages-reducer"
+import profileReducer from "./reducers/profile-reducer"
+import sidebarReducer from "./reducers/sidebar-reducer"
+import usersReducer from "./reducers/users-reducer"
 
 const rootReducers = combineReducers({
     profilePage: profileReducer,

@@ -1,14 +1,13 @@
-import { useState } from "react";
-import ProfileData from "./ProfileData";
-import React, { ChangeEvent } from "react";
-import style from "./ProfileInfo.module.css";
-import ProfileDataForm from "./ProfileDataForm";
-import { ProfileType } from "../../../types/types";
-import userPhoto from "../../../assets/images/user.png";
-import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import React, { ChangeEvent, useState } from "react"
+import userPhoto from "../../../assets/images/user.png"
+import { IProfile } from "../../../interfaces/interfaces"
+import Preloader from "../../common/Preloader/Preloader"
+import ProfileData from "./ProfileData"
+import ProfileDataForm from "./ProfileDataForm"
+import style from "./ProfileInfo.module.scss"
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks"
 
-const ProfileInfo: React.FC<PropsType> = React.memo((props) => {
+const ProfileInfo: React.FC<IProps> = React.memo((props) => {
     const {profile, status, updateStatus, isOwner, savePhoto, saveProfile} = props;
     const [editMode, setEditMod] = useState(false);
 
@@ -19,7 +18,7 @@ const ProfileInfo: React.FC<PropsType> = React.memo((props) => {
     const activateEditMode = () => {
         isOwner && setEditMod(true);
     };
-    const onSubmit = (formData: ProfileType) => {
+    const onSubmit = (formData: IProfile) => {
         //@ts-ignore
         saveProfile(formData).then(() => {
                         setEditMod(false);
@@ -36,13 +35,13 @@ const ProfileInfo: React.FC<PropsType> = React.memo((props) => {
             <div>
                 <div className={style.descriptionBlock}>
                     <div className={style.currentProfile}> 
-                    <img className={style.mainPhoto} src={profile.photos.large != null ? profile.photos.large 
-                                                                                       : userPhoto}  />
-                    {isOwner ? <input onChange={onMainPhotoSelected}
-                                      type={"file"} 
-                                      name={"file"}  />
-                             : isOwner}
-                </div>
+                        <img className={style.mainPhoto} alt='' src={profile.photos.large != null ? profile.photos.large 
+                                                                                        : userPhoto}  />
+                        {isOwner ? <input onChange={onMainPhotoSelected}
+                                        type={"file"} 
+                                        name={"file"}  />
+                                : isOwner}
+                    </div>
                     <ProfileStatusWithHooks updateStatus={updateStatus}
                                             isOwner={isOwner} 
                                             status={status} />
@@ -60,11 +59,11 @@ const ProfileInfo: React.FC<PropsType> = React.memo((props) => {
 
 export default ProfileInfo;
 
-type PropsType = {
-    profile: ProfileType | null
+type IProps = {
+    profile: IProfile | null
     status: string
     updateStatus: (status: string) => void
     isOwner?: boolean
     savePhoto: (file: File) => void
-    saveProfile: (profile: ProfileType) => void
+    saveProfile: (profile: IProfile) => void
 };

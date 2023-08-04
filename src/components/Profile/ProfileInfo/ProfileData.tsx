@@ -1,10 +1,10 @@
-import React from "react";
-import { Contact } from "./ProfileContacts";
-import style from "./ProfileInfo.module.css";
-import Preloader from "../../common/Preloader/Preloader";
-import { ContactsKeysType, ProfileType } from "../../../types/types";
+import React from "react"
+import { ContactsKeysType, IProfile } from "../../../interfaces/interfaces"
+import Preloader from "../../common/Preloader/Preloader"
+import { Contact } from "./ProfileContacts"
+import style from "./ProfileInfo.module.scss"
 
-const ProfileData: React.FC<PropsType> = React.memo((props) => {
+const ProfileData: React.FC<IProps> = React.memo((props) => {
     const {profile, activateEditMode} = props;
 
     if(!profile) {
@@ -39,7 +39,7 @@ const ProfileData: React.FC<PropsType> = React.memo((props) => {
 
 export default ProfileData;
 
-type PropsType = {
-    profile: ProfileType
+interface IProps {
+    profile: IProfile
     activateEditMode: () => void
 };

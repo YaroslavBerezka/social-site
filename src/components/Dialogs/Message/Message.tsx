@@ -1,7 +1,7 @@
-import React from "react";
-import style from "./Message.module.css";
+import React from "react"
+import style from "./Message.module.scss"
 
-const Message: React.FC<PropsType> = (props) => {
+const Message: React.FC<IProps> = (props) => {
     const {message} = props;
 
     return ( 
@@ -13,6 +13,6 @@ const Message: React.FC<PropsType> = (props) => {
 
 export default Message;
 
-type PropsType = {
+interface IProps {
     message: string | {newMessageBody: string}
 };

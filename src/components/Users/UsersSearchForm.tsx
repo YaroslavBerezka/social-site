@@ -1,19 +1,19 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Formik, Field, Form, } from "formik";
-import { FilterType } from "../../redux/reducers/users-reducer";
-import { getFilter } from "../../redux/selectors/users-selectors";
+import { Field, Form, Formik, } from "formik"
+import React from "react"
+import { useSelector } from "react-redux"
+import { FilterType } from "../../redux/reducers/users-reducer"
+import { getFilter } from "../../redux/selectors/users-selectors"
 
 const usersSearchFormValidate = (values: any) => {
     const errors = {};
     return errors;
 };
 
-export const UsersSearchForm:React.FC<PropsType> = React.memo((props) => {
+export const UsersSearchForm:React.FC<IProps> = React.memo((props) => {
     const {onFilterChanged} = props;
     const filter = useSelector(getFilter);
 
-    const submit = (values: FormType, { setSubmitting }: {setSubmitting: (isSubmitting: boolean) => void}) => {
+    const submit = (values: IForm, { setSubmitting }: {setSubmitting: (isSubmitting: boolean) => void}) => {
         const filter: FilterType = {
             term: values.term,
             friend: values.friend === "null" ? null 
@@ -50,10 +50,10 @@ export const UsersSearchForm:React.FC<PropsType> = React.memo((props) => {
     );
 });
 
-type PropsType = {
+interface IProps {
     onFilterChanged: (filter: FilterType) => void
 };
-type FormType = {
+interface IForm {
     term: string
     friend: "true" | "false" | "null"
 };

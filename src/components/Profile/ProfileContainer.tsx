@@ -1,11 +1,10 @@
-import React from "react";
-import Profile from "./Profile";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { DispatchType } from "../../redux/redux-store";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { getUserProfile, getStatus } from "../../api/thunkMW/thunk-profile";
-import { getAutorizedUserId } from "../../redux/selectors/profile-selectors";
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
+import { getStatus, getUserProfile } from "../../api/thunkMW/thunk-profile"
+import { DispatchType } from "../../redux/redux-store"
+import { getAutorizedUserId } from "../../redux/selectors/profile-selectors"
+import Profile from "./Profile"
 
 const ProfileContainer: React.FC = React.memo(() => {
     const autorizedUserId = useSelector(getAutorizedUserId);

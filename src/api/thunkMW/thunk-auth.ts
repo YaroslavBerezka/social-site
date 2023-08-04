@@ -1,9 +1,9 @@
-import { authAPI } from "../auth-api";
-import { securityAPI } from "../security-api";
-import { FormAction, stopSubmit } from "redux-form";
-import { ResultCodeFromCaptcha, ResultCodes } from "../api";
-import { BaseThunkActionType } from '../../redux/redux-store';
-import { ActionsAuthType, actionsAuth } from "../../redux/reducers/auth-reducer";
+import { FormAction, stopSubmit } from "redux-form"
+import { ActionsAuthType, actionsAuth } from "../../redux/reducers/auth-reducer"
+import { BaseThunkActionType } from '../../redux/redux-store'
+import { ResultCodeFromCaptcha, ResultCodes } from "../api"
+import { authAPI } from "../auth-api"
+import { securityAPI } from "../security-api"
 
 export const getAuth = (): ThunkActionType => async (dispatch) => {
     try {

@@ -1,9 +1,9 @@
-import React from "react";
-import cn from "classnames";
-import {NavLink} from "react-router-dom";
-import style from "./DialogItem.module.css";
+import cn from "classnames"
+import React from "react"
+import { NavLink } from "react-router-dom"
+import style from "./DialogItem.module.scss"
 
-const DialogItem: React.FC<PropsType> = React.memo((props) => {
+const DialogItem: React.FC<IProps> = React.memo((props) => {
     const {id, name} = props;
     const path = "/dialogs/" + id;
 
@@ -17,7 +17,7 @@ const DialogItem: React.FC<PropsType> = React.memo((props) => {
 
 export default DialogItem;
 
-type PropsType = {
+interface IProps {
     id: number
     name: string
 };

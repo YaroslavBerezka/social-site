@@ -1,17 +1,17 @@
-import React from "react";
-import style from "./Preloader.module.css";
-import preloader from "../../../assets/images/preloader.svg";
+import React from "react"
+import preloader from "../../../assets/images/preloader.svg"
+import style from "./Preloader.module.scss"
 
-const Preloader: React.FC<PropsType> = React.memo((props) => {
+const Preloader: React.FC<IProps> = React.memo((props) => {
     return (
         <div className={style.preloader}>
-            <img src={preloader}  />
+            <img src={preloader}  alt=''/>
         </div>
     );
 });
 
 export default Preloader;
 
-type PropsType = {
+interface IProps {
 
 };

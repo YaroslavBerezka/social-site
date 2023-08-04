@@ -1,15 +1,15 @@
-import React from "react";
-import MyPosts from "./MyPosts/MyPosts";
-import style from "./Profile.module.css";
-import { ProfileType } from "../../types/types";
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import { DispatchType } from "../../redux/redux-store";
-import { useDispatch, useSelector } from "react-redux";
-import { withAuthRedirect } from "../../hoc/withAuthRedirect";
-import { getProfile, getUserStatus } from "../../redux/selectors/profile-selectors";
-import { savePhoto, saveProfile, updateStatus } from "../../api/thunkMW/thunk-profile";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { savePhoto, saveProfile, updateStatus } from "../../api/thunkMW/thunk-profile"
+import { withAuthRedirect } from "../../hoc/withAuthRedirect"
+import { IProfile } from "../../interfaces/interfaces"
+import { DispatchType } from "../../redux/redux-store"
+import { getProfile, getUserStatus } from "../../redux/selectors/profile-selectors"
+import MyPosts from "./MyPosts/MyPosts"
+import style from "./Profile.module.scss"
+import ProfileInfo from "./ProfileInfo/ProfileInfo"
 
-const Profile: React.FC<PropsType> = withAuthRedirect(React.memo((props) => {
+const Profile: React.FC<IProps> = withAuthRedirect(React.memo((props) => {
     const { isOwner }  = props;
     const profile = useSelector(getProfile);
     const status = useSelector(getUserStatus);
@@ -21,7 +21,7 @@ const Profile: React.FC<PropsType> = withAuthRedirect(React.memo((props) => {
     const profileSavePhoto = (file: File) => {
         dispatch(savePhoto(file));
     };
-    const profileSaveProfile = (profile: ProfileType) => {
+    const profileSaveProfile = (profile: IProfile) => {
         return dispatch(saveProfile(profile));
     };
 
@@ -40,6 +40,6 @@ const Profile: React.FC<PropsType> = withAuthRedirect(React.memo((props) => {
 
 export default Profile;
 
-type PropsType = { 
+interface IProps { 
     isOwner?: boolean 
 };

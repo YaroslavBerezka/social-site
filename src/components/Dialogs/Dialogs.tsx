@@ -1,29 +1,29 @@
-import React from "react";
-import Message from "./Message/Message";
-import style from "./Dialogs.module.css";
-import DialogsReduxForm from './DialogsForm';
-import DialogItem from "./DialogItem/DialogItem";
-import { useDispatch, useSelector } from "react-redux";
-import { DispatchType } from "../../redux/redux-store";
-import { DialogType, MessageType, } from "../../types/types";
-import { withAuthRedirect } from "../../hoc/withAuthRedirect";
-import { actionsMessages } from "../../redux/reducers/messages-reducer";
-import { getMessagePage } from "../../redux/selectors/dialogs-selectors";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { withAuthRedirect } from "../../hoc/withAuthRedirect"
+import { IDialog, IMessage } from "../../interfaces/interfaces"
+import { actionsMessages } from "../../redux/reducers/messages-reducer"
+import { DispatchType } from "../../redux/redux-store"
+import { getMessagePage } from "../../redux/selectors/dialogs-selectors"
+import DialogItem from "./DialogItem/DialogItem"
+import style from "./Dialogs.module.scss"
+import DialogsReduxForm from './DialogsForm'
+import Message from "./Message/Message"
 
-const Dialogs: React.FC<PropsDialogsType> = withAuthRedirect(React.memo(() => {
+const Dialogs: React.FC<IPropsDialogs> = withAuthRedirect(React.memo(() => {
     const messagesPage = useSelector(getMessagePage);
     const dispatch: DispatchType = useDispatch();
 
     const dialogsElements = 
         messagesPage.dialogs.length === 0 ? "No dialogs" 
-                                          : messagesPage.dialogs.map((d: DialogType) => <DialogItem name={d.name} 
+                                          : messagesPage.dialogs.map((d: IDialog) => <DialogItem name={d.name} 
                                                                                                     key={d.id} 
                                                                                                     id={d.id} />);
     const messagesElements = 
         messagesPage.messages.length === 0 ? "No messages" 
-                                           : messagesPage.messages.map((m: MessageType) =>  <Message message={m.message} 
+                                           : messagesPage.messages.map((m: IMessage) =>  <Message message={m.message} 
                                                                                                      key={m.id} />);  
-    const addNewMessage = (values: NewDialogsFormType) => {
+    const addNewMessage = (values: INewDialogsForm) => {
         dispatch(actionsMessages.sendMessage(values.newMessageBody));
         values.newMessageBody = "";
     };
@@ -43,10 +43,10 @@ const Dialogs: React.FC<PropsDialogsType> = withAuthRedirect(React.memo(() => {
 
 export default Dialogs;
 
-export type PropsDialogsType = {
+export interface IPropsDialogs {
     isAuth?: boolean
     isOwner?: boolean
 };
-export type NewDialogsFormType = {
+export interface INewDialogsForm {
     newMessageBody: string
 };

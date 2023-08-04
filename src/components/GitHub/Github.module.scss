@@ -3,15 +3,15 @@
     -webkit-text-stroke-width: thin;
 };
 .details {
-    display: flex; 
+    > .login, .followers{
+        padding: 5px;
+        color: #525252;
+        -webkit-text-stroke-width: thin;
+    }     
 }
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.login, .followers{
-    padding: 5px;
-    color: #525252;
-    -webkit-text-stroke-width: thin;
-}   
+   

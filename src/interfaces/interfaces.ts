@@ -1,22 +1,22 @@
-export type PhotosType = {
+export interface IPhotos {
     small: string | null
     large: string | null
 };
-export type ProfileType = {
+export interface IProfile {
     aboutMe: string
     userId: number
     lookingForAJob: boolean
     lookingForAJobDescription: string
     fullName: string
-    contacts: ContactsType
-    photos: PhotosType
+    contacts: IContacts
+    photos: IPhotos
 };
-export type PostType = {
+export interface IPost {
     id: number
     message: string
     likesCount: number
 };
-export type ContactsType = {
+export interface IContacts {
     github: string
     vk: string
     facebook: string
@@ -26,23 +26,23 @@ export type ContactsType = {
     youtube: string 
     mainLink: string 
 };
-export type ContactsKeysType = keyof ContactsType;
-export type UserType = {
+export type ContactsKeysType = keyof IContacts;
+export interface IUser {
     id: number
     name: string
-    photos: PhotosType
+    photos: IPhotos
     status: string | null
     followed: boolean
 };
-export type DialogType = {
+export interface IDialog {
     id: number
     name: string
 };
-export type MessageType = {
+export interface IMessage {
     id: number
     message: string | {newMessageBody: string} 
 };
-export type MessagesPageType = {
-    dialogs: Array<DialogType>;
-    messages: Array<MessageType>;
+export interface IMessagesPage {
+    dialogs: Array<IDialog>;
+    messages: Array<IMessage>;
 };

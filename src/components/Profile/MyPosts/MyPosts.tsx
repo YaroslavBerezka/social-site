@@ -1,12 +1,12 @@
-import React from "react";
-import Post from "./Posts/Post";
-import style from "./MyPosts.module.css";
-import PostsReduxForm from "./MyPostsForm";
-import { PostType } from "../../../types/types";
-import { useDispatch, useSelector } from "react-redux";
-import { getPosts } from "../../../redux/selectors/myPosts-selectors";
-import { DispatchType } from "../../../redux/redux-store";
-import { actionsProfile } from "../../../redux/reducers/profile-reducer";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { IPost } from "../../../interfaces/interfaces"
+import { actionsProfile } from "../../../redux/reducers/profile-reducer"
+import { DispatchType } from "../../../redux/redux-store"
+import { getPosts } from "../../../redux/selectors/myPosts-selectors"
+import style from "./MyPosts.module.scss"
+import PostsReduxForm from "./MyPostsForm"
+import Post from "./Posts/Post"
 
 const MyPosts: React.FC = React.memo(() => {
     const posts = useSelector(getPosts);
@@ -14,10 +14,10 @@ const MyPosts: React.FC = React.memo(() => {
 
     const postsElements = 
         posts.length === 0 ? "No posts" 
-                           : posts.map((post: PostType) => <Post message={post.message} 
+                           : posts.map((post: IPost) => <Post message={post.message} 
                                                                  key={post.id} 
                                                                  likesCount={post.likesCount} /> );
-    const addNewPost = (values: NewMyPostFormType) => {
+    const addNewPost = (values: INewMyPostForm) => {
         dispatch(actionsProfile.addPost(values.newPostElement));
         values.newPostElement = "";
     };
@@ -35,6 +35,6 @@ const MyPosts: React.FC = React.memo(() => {
 
 export default MyPosts;
 
-export type NewMyPostFormType = {
+export interface INewMyPostForm {
     newPostElement: string
 };

@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React, { useEffect, useState } from "react"
 
-export const InputGithub: React.FC<PropsType> = React.memo((props) => {
+export const InputGithub: React.FC<IProps> = React.memo((props) => {
     const {currentTerm, onSubmit} = props;
     const [inputValue, setInputValue] = useState('');
     
@@ -18,7 +18,7 @@ export const InputGithub: React.FC<PropsType> = React.memo((props) => {
     );
 });
 
-type PropsType = {
+interface IProps {
     onSubmit: (value: string) => void
     currentTerm: string | null 
 };

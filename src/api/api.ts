@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 
 export const instance = axios.create({
         withCredentials: true,
@@ -15,13 +15,13 @@ export enum ResultCodes {
 export enum ResultCodeFromCaptcha {
     Captcha = 10
 };
-export type ResponseType = {
+export interface IResponse {
     data: {}
     resultCode: ResultCodes
-    messages: Array<string>
+    messages: string[]
 };
-export type ResponseTypeWithCaptcha = {
+export interface IResponseWithCaptcha {
     data: {}
     resultCode: ResultCodes
-    messages: Array<string>
+    messages: string[]
 };

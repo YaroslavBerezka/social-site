@@ -1,18 +1,18 @@
-import  "./App.css";
-import React, { useEffect } from "react";
-import News from "./components/News/News";
-import Music from "./components/Music/Music";
-import Navbar from "./components/Navbar/Navbar";
-import { DispatchType } from "./redux/redux-store";
-import Settings from "./components/Settings/Settings";
-import { useDispatch, useSelector } from "react-redux";
-import { initializeApp } from "./api/thunkMW/thunk-app";
-import { NotFound } from "./components/NotFound/NotFound";
-import { Navigate, Route, Routes, } from "react-router-dom"; 
-import { UsersPage } from "./components/Users/UsersPage";
-import Preloader from "./components/common/Preloader/Preloader";
-import { getInitialized } from "./redux/selectors/app-selectors";
-import { HeaderContainer } from "./components/Header/HeaderContainer";
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Navigate, Route, Routes, } from "react-router-dom"
+import "./App.scss"
+import { initializeApp } from "./api/thunkMW/thunk-app"
+import { HeaderContainer } from "./components/Header/HeaderContainer"
+import Music from "./components/Music/Music"
+import Navbar from "./components/Navbar/Navbar"
+import News from "./components/News/News"
+import { NotFound } from "./components/NotFound/NotFound"
+import Settings from "./components/Settings/Settings"
+import { UsersPage } from "./components/Users/UsersPage"
+import Preloader from "./components/common/Preloader/Preloader"
+import { DispatchType } from "./redux/redux-store"
+import { getInitialized } from "./redux/selectors/app-selectors"
 
 const ChatPage = React.lazy(() => import("./pages/Chat/ChatPage"));
 const Login = React.lazy(() => import("./components/Login/Login"));

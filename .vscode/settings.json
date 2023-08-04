@@ -18,12 +18,101 @@
     "Yaroslav"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib",
-  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-  "editor.formatOnPaste": false, // required
-  "editor.formatOnType": false, // required
-  "editor.formatOnSave": true, // optional
-  "editor.formatOnSaveMode": "file", // required to format on save
-  "files.autoSave": "onFocusChange", // optional but recommended
-  "vs-code-prettier-eslint.prettierLast": true,
-  "liveServer.settings.port": 5501
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "files.autoSave": "onFocusChange",
+    "editor.smoothScrolling": true,
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "editor.scrollBeyondLastLine": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.cursorBlinking": "expand",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.glyphMargin": false,
+    "workbench.productIconTheme": "fluent-icons",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Ionevka Term SS04 Extended', Source Cod Pro",
+    "editor.inlayHints.fontFamily": "Pragmata Pro",
+    "notebook.output.fontFamily": "Pragmata Pro",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "entity.name.type.class",
+                    "keyword",
+                    "constant",
+                    "storage.modifier",
+                    "storage.type.class.js"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    "invalid",
+                    "keyword.operator",
+                    "constant.numeric.css",
+                    "keyword.other.util.px.css",
+                    "constant.numeric.decimal.js",
+                    "constant.numeric.json"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "terminal.integrated.fontFamily": "Ionevka NFM",
+    "terminal.integrated.fontSize": 15,
+    "explorer.compactFolders": false,
+    "prettier.semi": false,
+    "prettier.useTabs": true,
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "prettier.arrowParens": "avoid",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "breadcrumbs.icons": false,
+    "breadcrumbs.showFields": false,
+    "breadcrumbs.showArrays": false,
+    "breadcrumbs.showConstants": false,
+    "breadcrumbs.showBooleans": false,
+    "breadcrumbs.showClasses": false,
+    "breadcrumbs.showConstructors": false,
+    "breadcrumbs.showEnumMembers": false,
+    "breadcrumbs.showKeys": false,
+    "breadcrumbs.showEvents": false,
+    "breadcrumbs.showFiles": false,
+    "breadcrumbs.showFunctions": false,
+    "breadcrumbs.showMethods": false,
+    "breadcrumbs.symbolPath": "off",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
+    "typescript.suggest.paths": false,
+    "javascript.suggest.paths": false,
+    "cSpell.language": "en, ua",
+    "cSpell.enabled": true,
+    "cSpell.enableFiletypes": [
+        "blade",
+        "jsx",
+        "tsx",
+        "ts",
+        "js",
+        "scss",
+        "sass"
+    ]
 }
+
+

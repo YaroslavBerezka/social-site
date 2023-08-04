@@ -1,0 +1,15 @@
+
+.formControl{
+    &.error textarea,
+    &.error input{
+        border: solid rgba(255, 0, 0, 0.705) 2px;
+    
+    }
+    >span {
+        color: red;
+        padding-left: 10px;
+    
+    }
+}
+
+    

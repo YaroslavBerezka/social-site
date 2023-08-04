@@ -1,6 +1,6 @@
-import React from "react";
-import style from "./Navbar.module.css";
-import {NavLink} from "react-router-dom";
+import React from "react"
+import { NavLink } from "react-router-dom"
+import style from "./Navbar.module.scss"
 
 const Navbar: React.FC = React.memo(() => {
   const NavPosition = (navData: any) =>  navData.isActive ? style.active : style.item;

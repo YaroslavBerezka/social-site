@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { StatusType } from "../../api/chat-api";
-import { DispatchType } from "../../redux/redux-store";
-import { sendMessage } from "../../api/thunkMW/thunk-chat";
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { StatusType } from "../../api/chat-api"
+import { sendMessage } from "../../api/thunkMW/thunk-chat"
+import { DispatchType } from "../../redux/redux-store"
 
-export const AddMessageForm: React.FC<PropsType> = React.memo((props) => {
+export const AddMessageForm: React.FC<IProps> = React.memo((props) => {
     const {status} = props;
     const [message, setMessage] = useState('');
     const dispatch: DispatchType = useDispatch();
@@ -29,6 +29,6 @@ export const AddMessageForm: React.FC<PropsType> = React.memo((props) => {
     );
 });
 
-type PropsType = {
+interface IProps {
     status: StatusType
 };

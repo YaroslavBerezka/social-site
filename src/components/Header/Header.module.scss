@@ -1,0 +1,27 @@
+.header {
+    grid-area: h;
+    background-color: #525252;
+    user-select: none;
+    > a{
+      > img {
+        width: 60px;
+        padding-left: 10px;
+      }  
+    }
+    > .loginBlock {
+      float: right;
+      padding: 20px;
+      color: white;
+      -webkit-text-stroke-width: thin;
+      >  a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-text-stroke-width: thin;
+        &.active {
+          color: #ffd700;
+        }
+     }
+    }
+
+  }

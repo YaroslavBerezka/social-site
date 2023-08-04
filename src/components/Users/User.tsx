@@ -1,10 +1,10 @@
-import React from "react";
-import style from "./Users.module.css";
-import { NavLink } from "react-router-dom";
-import { UserType } from "../../types/types";
-import userPhoto from "../../assets/images/user.png";
+import React from "react"
+import { NavLink } from "react-router-dom"
+import userPhoto from "../../assets/images/user.png"
+import { IUser } from "../../interfaces/interfaces"
+import style from "./Users.module.scss"
 
-const User: React.FC<PropsType> = React.memo((props) => {
+const User: React.FC<IProps> = React.memo((props) => {
     const {user, isFollowingInProgress, unfollow, follow} = props;
 
     return (
@@ -14,7 +14,7 @@ const User: React.FC<PropsType> = React.memo((props) => {
                         <NavLink to={"/profile/" + user.id}>
                             <img src={(user.photos.small ? user.photos.small  
                                                          : userPhoto )}
-                                      className={style.userPhoto} /> 
+                                      className={style.userPhoto} alt=''/> 
                         </NavLink>
                     </div>
                     <span>
@@ -37,9 +37,8 @@ const User: React.FC<PropsType> = React.memo((props) => {
 });
 
 export default User;
-
-type PropsType = {
-    user: UserType
+interface IProps {
+    user: IUser
     isFollowingInProgress: boolean
     unfollow: (userId: number) => void
     follow: (userId: number) => void

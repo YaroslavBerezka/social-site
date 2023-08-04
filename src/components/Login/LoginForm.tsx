@@ -1,13 +1,12 @@
-import React from "react";
-import style from "./LoginForm.module.css";
-import { InjectedFormProps, reduxForm } from "redux-form";
-import { Element } from "../common/FormsControls/FormsControls";
-import { renderField } from "../common/FormsControls/FormsControls";
-import { maxLengthCreator, required } from "../../utils/validators/validators";
+import React from "react"
+import { InjectedFormProps, reduxForm } from "redux-form"
+import { maxLengthCreator, required } from "../../utils/validators/validators"
+import { Element, renderField } from "../common/FormsControls/FormsControls"
+import style from "./LoginForm.module.scss"
 
 const Input = Element("input");
 
-const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, PropsType> & PropsType> = React.memo((props) => {
+const LoginForm: React.FC<InjectedFormProps<ILoginFormValues, IProps> & IProps> = React.memo((props) => {
     const {handleSubmit, error, captchaUrl} = props;
     
     return(
@@ -19,7 +18,7 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, PropsType> & Pr
                 {renderField<LoginFormTypeKeys>( "rememberMe", [] , 
                                                  Input, "checkbox", "remember me" )}
 
-                {captchaUrl && <img className={style.captchaUrl} src={captchaUrl} />}
+                {captchaUrl && <img className={style.captchaUrl} src={captchaUrl} alt=''/>}
                 {captchaUrl && renderField( "captcha", [required] , Input, null, null, "Symbols of image" )}
                 {error && <div className={style.formSummaryError}>
                     {error}
@@ -32,19 +31,19 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType, PropsType> & Pr
     );
 });
 
-const LoginReduxForm = reduxForm<LoginFormValuesType, PropsType>({
+const LoginReduxForm = reduxForm<ILoginFormValues, IProps>({
     form: "login",
 })(LoginForm);
 
 export default LoginReduxForm;
 
-export type LoginFormValuesType = {
+export interface ILoginFormValues {
     email: string
     password: string
     rememberMe: boolean
     captcha: string
 };
-type LoginFormTypeKeys = Extract<keyof LoginFormValuesType, string>;
-type PropsType = {
+type LoginFormTypeKeys = Extract<keyof ILoginFormValues, string>;
+type IProps = {
     captchaUrl: string | null
 };

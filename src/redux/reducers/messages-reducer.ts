@@ -1,5 +1,5 @@
-import { InferActionsTypes } from "../redux-store";
-import { DialogType, MessageType } from "../../types/types";
+import { IDialog, IMessage } from "../../interfaces/interfaces"
+import { InferActionsTypes } from "../redux-store"
 
 const initialState = {
     dialogs: [
@@ -9,7 +9,7 @@ const initialState = {
         {id: 4, name: "Sveta",}, 
         {id: 5, name: "Misha",},
         {id: 6, name: "Volodya",},
-        ] as Array<DialogType>,
+        ] as IDialog[],
     messages: [
         {id: 1, message: "Hi",},
         {id: 2, message: "How is your it-kamasutra?",},
@@ -17,7 +17,7 @@ const initialState = {
         {id: 4, message: "Yo",}, 
         {id: 5, message: "Yo",},
         {id: 6, message: "Yo",},
-        ] as Array<MessageType>,
+        ] as IMessage[],
 };
 
 const messagesReducer = (state = initialState , action: ActionsMessagesTypes): InitialStateType => {

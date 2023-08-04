@@ -1,9 +1,8 @@
-import "./index.css";
-import "./index.css";
-import React from "react";
-import { SocialApp } from "./SocialApp";
-import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals" ;
+import React from "react"
+import ReactDOM from "react-dom/client"
+import { SocialApp } from "./SocialApp"
+import "./index.scss"
+import reportWebVitals from "./reportWebVitals"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement) ;
 

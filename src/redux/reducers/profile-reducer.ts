@@ -1,12 +1,12 @@
-import { InferActionsTypes } from "../redux-store";
-import { PhotosType, PostType, ProfileType } from "../../types/types";
+import { IPhotos, IPost, IProfile } from "../../interfaces/interfaces"
+import { InferActionsTypes } from "../redux-store"
 
 const initialState = {
   posts: [
     {id: 1, message: "Hi, how are you?", likesCount: 23},
     {id: 2, message: "It's my first post", likesCount: 1500},
-    ] as Array<PostType>,
-  profile: null as ProfileType | null,
+    ] as IPost[],
+  profile: null as IProfile | null,
   status: "",
 };
 
@@ -42,7 +42,7 @@ const profileReducer = (state = initialState, action: ActionsProfileTypes): Init
     case "profile/SET_PHOTO_SUCCESS":
       return {
         ...state,
-        profile: {...state.profile, photos: action.payload.photos} as ProfileType,
+        profile: {...state.profile, photos: action.payload.photos} as IProfile,
       };
     default:
       return state;
@@ -54,11 +54,11 @@ export const actionsProfile = {
     ({type: "profile/ADD-POST", payload: {newPostText}} as const),
   removePost: (postId: number) => 
     ({type: "profile/REMOVE-POST", payload: {postId}} as const),
-  setUserProfile: (profile: ProfileType) => 
+  setUserProfile: (profile: IProfile) => 
     ({type: "profile/SET_USER_PROFILE", payload: {profile}} as const),
   setStatus: (status: string) => 
     ({type: "profile/SET_STATUS", payload: {status}} as const),
-  setPhotoSuccess: (photos: PhotosType) => 
+  setPhotoSuccess: (photos: IPhotos) => 
     ({type: "profile/SET_PHOTO_SUCCESS", payload: {photos}} as const),
 };
 

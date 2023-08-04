@@ -1,8 +1,8 @@
-import cn from "classnames";
-import style from "./Paginator.module.css";
-import React, { useEffect, useState } from "react";
+import cn from "classnames"
+import React, { useEffect, useState } from "react"
+import style from "./Paginator.module.scss"
 
-const Paginator: React.FC<PropsType> = React.memo((props) => {
+const Paginator: React.FC<IProps> = React.memo((props) => {
     const {totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10} = props;
     const pagesCount = Math.ceil(totalItemsCount / pageSize);
     const pages: Array<number> = [];
@@ -19,7 +19,7 @@ const Paginator: React.FC<PropsType> = React.memo((props) => {
 
     return (<div className={style.paginator}>
                 {portionNumber > 1 && 
-                 <button className={style.buttons} onClick={() => setPortionNumber(portionNumber - 1)}>❮</button>}
+                 <button className={style.buttons} onClick={() => setPortionNumber(portionNumber - 1)}/>}
 
                 {pages.filter((p: number) => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
                       .map((p: number) => {
@@ -35,7 +35,7 @@ const Paginator: React.FC<PropsType> = React.memo((props) => {
 
 export default Paginator;
 
-type PropsType = {
+interface IProps {
   totalItemsCount: number
   pageSize: number
   currentPage: number

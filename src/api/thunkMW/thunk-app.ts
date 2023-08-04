@@ -1,6 +1,6 @@
-import { getAuth } from "./thunk-auth";
-import { BaseThunkActionType } from '../../redux/redux-store';
-import { ActionsAppTypes, actionsApp } from "../../redux/reducers/app-reducer";
+import { ActionsAppTypes, actionsApp } from "../../redux/reducers/app-reducer"
+import { BaseThunkActionType } from '../../redux/redux-store'
+import { getAuth } from "./thunk-auth"
 
 export const initializeApp =  (): ThunkActionType => async (dispatch: any) => {
     try {

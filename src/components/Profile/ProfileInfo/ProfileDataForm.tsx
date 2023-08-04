@@ -1,13 +1,13 @@
-import React from "react";
-import style from "./ProfileInfo.module.css";
-import { ProfileType } from "../../../types/types";
-import { InjectedFormProps, reduxForm } from "redux-form";
-import { Element, renderField } from "../../common/FormsControls/FormsControls";
+import React from "react"
+import { InjectedFormProps, reduxForm } from "redux-form"
+import { IProfile } from "../../../interfaces/interfaces"
+import { Element, renderField } from "../../common/FormsControls/FormsControls"
+import style from "./ProfileInfo.module.scss"
 
 const Input = Element("input");
 const Textarea = Element("textarea");
 
-const ProfileDataForm: React.FC<InjectedFormProps<ProfileType, PropsType> & PropsType> = React.memo((props) => {
+const ProfileDataForm: React.FC<InjectedFormProps<IProfile, IProps> & IProps> = React.memo((props) => {
     const {handleSubmit, error, profile} = props;
     
     return (
@@ -43,14 +43,14 @@ const ProfileDataForm: React.FC<InjectedFormProps<ProfileType, PropsType> & Prop
     );
 });
 
-const ProfileDataReduxForm = reduxForm<ProfileType, PropsType>({
+const ProfileDataReduxForm = reduxForm<IProfile, IProps>({
     form: "edit-profile",
     enableReinitialize: true, 
     destroyOnUnmount: false })(ProfileDataForm);
 
 export default ProfileDataReduxForm;
 
-type PropsType = {
-    profile: ProfileType
+interface IProps {
+    profile: IProfile
 };
-type ProfileFormKeysType = Extract<keyof ProfileType, string>;
+type ProfileFormKeysType = Extract<keyof IProfile, string>;

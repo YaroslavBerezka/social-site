@@ -1,7 +1,7 @@
-import React from  "react";
-import style from "../ProfileInfo/ProfileInfo.module.css";
+import React from "react"
+import style from "../ProfileInfo/ProfileInfo.module.scss"
 
-export const Contact: React.FC<PropsType> = React.memo((props) => {
+export const Contact: React.FC<IProps> = React.memo((props) => {
     const {contactTitle, contactValue} = props;
 
     return (
@@ -11,7 +11,7 @@ export const Contact: React.FC<PropsType> = React.memo((props) => {
         );
 });
 
-type PropsType = {
+interface IProps {
     contactTitle: string
     contactValue:string
 };

@@ -1,7 +1,7 @@
-import React from "react";
-import { Field, WrappedFieldProps } from "redux-form";
-import style from "../FormsControls/FormsControls.module.css";
-import { FieldValidatorType } from "../../../utils/validators/validators";
+import React from "react"
+import { Field, WrappedFieldProps } from "redux-form"
+import { FieldValidatorType } from "../../../utils/validators/validators"
+import style from "../FormsControls/FormsControls.module.scss"
 
 export const Element = (type: string): React.FC<WrappedFieldProps> => ({input, meta, ...args}) => {
     const InputElement = type === "input" ? <input {...input} {...args} />

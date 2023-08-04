@@ -1,14 +1,14 @@
-import { UserType } from "../../types/types";
-import { InferActionsTypes } from "../redux-store";
-import { updateObjectInArray } from "../../utils/objects-helpers";
+import { IUser } from "../../interfaces/interfaces"
+import { updateObjectInArray } from "../../utils/objects-helpers"
+import { InferActionsTypes } from "../redux-store"
 
 const initialState = {
-  users:  [] as Array<UserType> ,
+  users:  [] as IUser[] ,
   pageSize: 10,
   totalItemsCount: 0,
   currentPage: 1,
   isFetching: false,
-  followingInProgress: [] as Array<number>,
+  followingInProgress: [] as number[],
   filter: {
     term: "",
     friend: null as null | boolean 
@@ -68,7 +68,7 @@ export const usersReducer = (state = initialState, action: ActionsUsersTypes): I
 export const actionsUsers = {
   followSuccess: (userId: number) => ({ type: "users/FOLLOW", payload: {userId} } as const),
   unfollowSuccess: (userId: number) => ({ type: "users/UNFOLLOW", payload: {userId} } as const),
-  setUsers: (users: Array<UserType>) => ({ type: "users/SET_USERS", payload: {users} } as const),
+  setUsers: (users: IUser[]) => ({ type: "users/SET_USERS", payload: {users} } as const),
   setCurrentPage: (currentPage: number) => ({ type:"users/SET_CURRENT_PAGE", payload: {currentPage} } as const),
   setTotalItemsCount: (totalItemsCount: number) => ({ type:"users/SET_TOTAL_ITEMS_COUNT", 
                                                       payload: {totalItemsCount} } as const),

@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import { MessageChat } from "./MessageChat";
-import React, {useRef, useEffect, useState} from "react";
-import { getMessages } from "../../redux/selectors/chat-selectors";
+import React, { useEffect, useRef, useState } from "react"
+import { useSelector } from "react-redux"
+import { getMessages } from "../../redux/selectors/chat-selectors"
+import { MessageChat } from "./MessageChat"
 
 export const Messages: React.FC = React.memo(() => {
     const messages = useSelector(getMessages); 

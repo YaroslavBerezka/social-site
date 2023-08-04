@@ -1,8 +1,7 @@
-import { ResponseType } from "../api/api";
-import { following, unfollowing } from "../api/thunkMW/thunk-users";
-import { usersAPI } from "../api/users-api";
-import { ResultCodes } from "../api/api";
-import { actionsUsers } from "../redux/reducers/users-reducer";
+import { ResponseType, ResultCodes } from "../api/api"
+import { following, unfollowing } from "../api/thunkMW/thunk-users"
+import { usersAPI } from "../api/users-api"
+import { actionsUsers } from "../redux/reducers/users-reducer"
 
 jest.mock("../api/users-api");
 const usersApiMock = usersAPI as jest.Mocked<typeof usersAPI>;

@@ -1,0 +1,42 @@
+.user {
+    padding-left: 10px;
+
+        >span {
+            > .photoUsers{
+                > a {
+                    > .userPhoto {
+                        width: 150px;
+                        height: 150px;
+                        margin: 5px;
+                    }   
+                }
+            }
+
+            > span {
+                > .infoUsers {
+                    display: block;
+                    width: 150px;
+                    text-align: center;
+                    padding: 5px;
+                }
+            }
+
+            >.followingUsers {
+                width: 150px;
+                text-align: center;
+                padding: 5px;
+            }   
+        }
+}
+.pageUsers {
+    
+    > .users {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 20px;
+    }   
+}
+
+

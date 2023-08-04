@@ -1,7 +1,6 @@
-import React from "react";
-import style from "./Music.module.css";
+import React from "react"
 
-const Music: React.FC<PropsType> = React.memo((props) => {
+const Music: React.FC<IProps> = React.memo((props) => {
     return (
         <div>
             Music
@@ -11,6 +10,6 @@ const Music: React.FC<PropsType> = React.memo((props) => {
 
 export default Music;
 
-type PropsType = {
+interface IProps {
 
 };

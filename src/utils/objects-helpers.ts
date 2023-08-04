@@ -1,6 +1,6 @@
-import { UserType } from "../types/types";
+import { IUser } from "../interfaces/interfaces"
 
-export const updateObjectInArray = (items: Array<UserType>, 
+export const updateObjectInArray = (items: IUser[], 
                                     itemId: number, 
                                     objPropName: string, 
                                     newObjProps: {followed: boolean}) => {

@@ -1,9 +1,9 @@
-import { ResultCodes } from "../api";
-import { profileAPI } from "../profile-api";
-import { ProfileType } from "../../types/types";
-import { FormAction, stopSubmit } from "redux-form";
-import { BaseThunkActionType } from '../../redux/redux-store';
-import { ActionsProfileTypes, actionsProfile } from "../../redux/reducers/profile-reducer";
+import { FormAction, stopSubmit } from "redux-form"
+import { IProfile } from "../../interfaces/interfaces"
+import { ActionsProfileTypes, actionsProfile } from "../../redux/reducers/profile-reducer"
+import { BaseThunkActionType } from '../../redux/redux-store'
+import { ResultCodes } from "../api"
+import { profileAPI } from "../profile-api"
 
 export const getUserProfile = (userId: number): ThunkActionType => async (dispatch) => {
     try {
@@ -56,7 +56,7 @@ export const savePhoto = (file: File): ThunkActionType => async (dispatch, getSt
     };     
 };
   
-export const saveProfile = (profile: ProfileType): ThunkActionType => async (dispatch) => {
+export const saveProfile = (profile: IProfile): ThunkActionType => async (dispatch) => {
     try {
       const data = await profileAPI.saveProfile(profile);
   

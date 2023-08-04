@@ -1,7 +1,7 @@
-import React from "react";
-import style from "./News.module.css";
+import React from "react"
+import style from "./News.module.scss"
 
-const News: React.FC<PropsType> = React.memo((props) => {
+const News: React.FC<IProps> = React.memo((props) => {
     return (
         <div className={style.content}>
             News
@@ -11,6 +11,6 @@ const News: React.FC<PropsType> = React.memo((props) => {
 
 export default News;
 
-type PropsType= {
+interface IProps {
 
 };

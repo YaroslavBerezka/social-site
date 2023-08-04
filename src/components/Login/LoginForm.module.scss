@@ -1,6 +1,12 @@
-.formSummaryError {
-    padding: 5px 0px;
-    color: red;
+
+.form {
+    >.captchaUrl {
+        width: 175px;
+    }
+    >.formSummaryError {
+        padding: 5px 0px;
+        color: red;
+    }    
 }
 .login {
     display: flex;
@@ -9,7 +15,4 @@
     border: 2px solid #525252;
     padding: 10px;
     background-color: #525252;
-}
-.captchaUrl {
-    width: 175px;
 }

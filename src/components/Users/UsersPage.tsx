@@ -1,10 +1,10 @@
-import React from "react";
-import { Users } from "./Users";
+import React from "react"
+import { Users } from "./Users"
 
-export const UsersPage: React.FC<PropsType> = React.memo((props) => {
+export const UsersPage: React.FC<IProps> = React.memo((props) => {
     return <Users />
 });
 
-type PropsType = {
+interface IProps {
 
 };

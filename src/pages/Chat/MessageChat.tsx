@@ -1,12 +1,12 @@
-import React from "react";
-import { ChatMessageType } from "../../api/chat-api";
+import React from "react"
+import { ChatMessageType } from "../../api/chat-api"
 
-export const MessageChat: React.FC<PropsType> = React.memo((props) => {
+export const MessageChat: React.FC<IProps> = React.memo((props) => {
     const {message} = props;
 
     return (
         <div>
-            <img src={message.photo as string} style={{width: '30px'}}/> <b>{message.userName}</b>
+            <img src={message.photo as string} style={{width: '30px'}} alt=''/> <b>{message.userName}</b>
             <br/>
             {message.message}
             <hr/>
@@ -14,6 +14,6 @@ export const MessageChat: React.FC<PropsType> = React.memo((props) => {
     );
 });
 
-type PropsType = {
+interface IProps {
     message: ChatMessageType
 };

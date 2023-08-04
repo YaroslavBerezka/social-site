@@ -1,15 +1,15 @@
-import axios from "axios";
-import style from "./Github.module.css";
-import { UserType, UsersType } from "./GIthub";
-import React, {useEffect, useState} from "react";
+import axios from "axios"
+import React, { useEffect, useState } from "react"
+import { IUser, IUsers } from "./GIthub"
+import style from "./Github.module.scss"
 
-export const UsersGithub: React.FC<PropsType> = React.memo((props) => {
+export const UsersGithub: React.FC<IProps> = React.memo((props) => {
     const {selectedUser, onSelected, currentTerm} = props;
-    const [users, setUsers] = useState<UserType[]>([]);
+    const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(() => {
         axios
-            .get<UsersType>(`https://api.github.com/search/users?q=${currentTerm}`)
+            .get<IUsers>(`https://api.github.com/search/users?q=${currentTerm}`)
             .then(response => setUsers(response.data.items))
     },[currentTerm]);
 
@@ -24,8 +24,8 @@ export const UsersGithub: React.FC<PropsType> = React.memo((props) => {
     );
 });
 
-type PropsType = {
-    selectedUser: UserType | null
-    onSelected: (user: UserType) => void
+interface IProps {
+    selectedUser: IUser | null
+    onSelected: (user: IUser) => void
     currentTerm: string | null
 };

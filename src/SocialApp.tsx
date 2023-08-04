@@ -1,10 +1,10 @@
-import React from "react";
-import { App } from "./App";
-import { Provider } from "react-redux";
-import store from "./redux/redux-store";
-import { BrowserRouter } from "react-router-dom";
+import React from "react"
+import { Provider } from "react-redux"
+import { BrowserRouter } from "react-router-dom"
+import { App } from "./App"
+import store from "./redux/redux-store"
 
-export const SocialApp: React.FC<PropsType> = React.memo((props) => {
+export const SocialApp: React.FC<IProps> = React.memo((props) => {
     return  <BrowserRouter>
                 <Provider store={store}>
                   <App />
@@ -12,6 +12,6 @@ export const SocialApp: React.FC<PropsType> = React.memo((props) => {
             </BrowserRouter>
 });
 
-type PropsType = {
+interface IProps {
 
 };

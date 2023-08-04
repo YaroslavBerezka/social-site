@@ -1,17 +1,17 @@
-import style from "./Github.module.css";
-import { InputGithub } from "./InputGithub";
-import { UsersGithub } from "./UsersGithub";
-import { DetailsGithub } from "./DetailsGithub";
-import React, {useState, useEffect} from "react";
+import React, { useEffect, useState } from "react"
+import { DetailsGithub } from "./DetailsGithub"
+import style from "./Github.module.scss"
+import { InputGithub } from "./InputGithub"
+import { UsersGithub } from "./UsersGithub"
 
-const GIthub: React.FC = React.memo(() => {
+const GIthub: React.FC<IProps> = React.memo(() => {
     const [currentTerm, setCurrentTerm] = useState<null | string>('a');
-    const [selectedUser, setSelectedUser] = useState<UserType | null>(null);
+    const [selectedUser, setSelectedUser] = useState<IUser | null>(null);
 
     const onSubmit = (value: string) => {
         setCurrentTerm(value);
     };
-    const onSelected = (user: UserType) => {
+    const onSelected = (user: IUser) => {
         setSelectedUser(user);
     };
 
@@ -43,17 +43,17 @@ const GIthub: React.FC = React.memo(() => {
 
 export default GIthub;
 
-type PropsType = {
+interface IProps {
 
 };
-export type UserType ={
+export interface IUser {
     login: string
     id: number
 };
-export type UsersType = {
-    items: UserType[]
+export interface IUsers {
+    items: IUser[]
 };
-export type UsersDetails = {
+export interface IUsersDetails {
     login: string
     avatar_url: string
     followers: number

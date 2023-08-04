@@ -1,12 +1,12 @@
-import React from "react";
-import { NewDialogsFormType } from "./Dialogs";
-import { InjectedFormProps, reduxForm } from "redux-form";
-import { Element, GetStringKeys, renderField } from "../common/FormsControls/FormsControls";
-import { maxLengthCreator, required } from "../../utils/validators/validators";
+import React from "react"
+import { InjectedFormProps, reduxForm } from "redux-form"
+import { maxLengthCreator, required } from "../../utils/validators/validators"
+import { Element, GetStringKeys, renderField } from "../common/FormsControls/FormsControls"
+import { INewDialogsForm } from "./Dialogs"
 
 const Textarea = Element("textarea");
 
-const DialogsForm: React.FC<InjectedFormProps<NewDialogsFormType, PropsType> & PropsType> = React.memo((props) => {
+const DialogsForm: React.FC<InjectedFormProps<INewDialogsForm, IProps> & IProps> = React.memo((props) => {
     const {handleSubmit} = props;
     
     return (
@@ -15,17 +15,17 @@ const DialogsForm: React.FC<InjectedFormProps<NewDialogsFormType, PropsType> & P
             <div>
                 <button>Send</button>
             </div>
-        </form>         
+    </form>
     );
 });
 
-const DialogsReduxForm = reduxForm<NewDialogsFormType, PropsType>({
+const DialogsReduxForm = reduxForm<INewDialogsForm, IProps>({
     form: "dialogsForm",
 })(DialogsForm);
 
 export default DialogsReduxForm;
 
-type PropsType = {
+interface IProps {
 
 };
-type KeysDialogsType = GetStringKeys<NewDialogsFormType>;
+type KeysDialogsType = GetStringKeys<INewDialogsForm>;

@@ -1,7 +1,6 @@
-import React from "react";
-import style from "./Settings.module.css";
+import React from "react"
 
-const Settings: React.FC<PropsType> = React.memo((props) => {
+const Settings: React.FC<IProps> = React.memo((props) => {
     return (
         <div>
             Settings
@@ -11,6 +10,6 @@ const Settings: React.FC<PropsType> = React.memo((props) => {
 
 export default Settings;
 
-type PropsType = {
+interface IProps {
 
 };

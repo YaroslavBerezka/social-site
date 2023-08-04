@@ -1,19 +1,21 @@
-import User from "./User";
-import React, { useEffect } from "react";
-import { UserType } from "../../types/types";
-import style from "../Users/Users.module.css";
-import { UsersSearchForm } from "./UsersSearchForm";
-import Paginator from "../common/Paginator/Paginator";
-import Preloader from "../common/Preloader/Preloader";
-import { DispatchType } from "../../redux/redux-store";
-import { useDispatch, useSelector } from "react-redux";
-import { FilterType } from "../../redux/reducers/users-reducer";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { requestUsers, following, unfollowing } from "../../api/thunkMW/thunk-users";
-import { getCurrentPage, getFilter, getFollowingInProgress, 
-         getIsFetching, getPageSize, getTotalItemsCount, getUsers } from "../../redux/selectors/users-selectors";
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom"
+import { following, requestUsers, unfollowing } from "../../api/thunkMW/thunk-users"
+import { IUser } from "../../interfaces/interfaces"
+import { FilterType } from "../../redux/reducers/users-reducer"
+import { DispatchType } from "../../redux/redux-store"
+import {
+    getCurrentPage, getFilter, getFollowingInProgress,
+    getIsFetching, getPageSize, getTotalItemsCount, getUsers
+} from "../../redux/selectors/users-selectors"
+import style from "../Users/Users.module.scss"
+import Paginator from "../common/Paginator/Paginator"
+import Preloader from "../common/Preloader/Preloader"
+import User from "./User"
+import { UsersSearchForm } from "./UsersSearchForm"
 
-export const Users: React.FC<PropsType> = React.memo((props) => {
+export const Users: React.FC<IProps> = React.memo((props) => {
     const users = useSelector(getUsers);
     const filter = useSelector(getFilter);
     const pageSize = useSelector(getPageSize);
@@ -71,7 +73,7 @@ export const Users: React.FC<PropsType> = React.memo((props) => {
                                 <Paginator onPageChanged={onPageChanged} pageSize={pageSize}
                                            totalItemsCount={totalItemsCount} currentPage={currentPage} />
                                 <div className={style.users}>
-                                        { users.map((user: UserType) => {const isFollowingInProgress = 
+                                        { users.map((user: IUser) => {const isFollowingInProgress = 
                                                                         followingInProgress.some((id: number) => id === user.id);
 
                                         return <User isFollowingInProgress={isFollowingInProgress} unfollow={unfollow}
@@ -84,6 +86,6 @@ export const Users: React.FC<PropsType> = React.memo((props) => {
     );
 });
 
-type PropsType = {
+interface IProps {
    
 };

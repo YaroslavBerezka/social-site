@@ -1,7 +1,7 @@
-import style from "./ProfileInfo.module.css";
-import  React, { ChangeEvent, useEffect, useState }  from "react";
+import React, { ChangeEvent, useEffect, useState } from "react"
+import style from "./ProfileInfo.module.scss"
 
-const  ProfileStatusWithHooks: React.FC<PropsType> = React.memo((props) =>  {
+const  ProfileStatusWithHooks: React.FC<IProps> = React.memo((props) =>  {
     const {status, isOwner, updateStatus} = props;
     const [editMode, setEditMod] = useState<boolean>(false);
     const [newStatus, setStatus] = useState<string>(status);
@@ -43,7 +43,7 @@ const  ProfileStatusWithHooks: React.FC<PropsType> = React.memo((props) =>  {
 
 export default ProfileStatusWithHooks;
 
-type PropsType = {
+interface IProps {
     status: string
     isOwner?: boolean
     updateStatus: (status: string) => void
