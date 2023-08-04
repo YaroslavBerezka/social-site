@@ -29,7 +29,7 @@ const _followUnfollowFlow = async (dispatch: Dispatch<ActionsUsersTypes>, userId
       dispatch(actionsUsers.toggleFollowingProgress(true, userId));
       
       const data = await apiMethod(userId);
-    
+      //@ts-ignore
       switch(data.resultCode as ResultCodes){
         case ResultCodes.Success:
         dispatch(actionCreator(userId));
@@ -43,6 +43,7 @@ const _followUnfollowFlow = async (dispatch: Dispatch<ActionsUsersTypes>, userId
   
 export const following = (userId: number): ThunkActionType => async (dispatch) => {
     try {
+      //@ts-ignore
       await _followUnfollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), actionsUsers.followSuccess);
     }
     catch(error) {
@@ -52,6 +53,7 @@ export const following = (userId: number): ThunkActionType => async (dispatch) =
   
 export const unfollowing = (userId: number): ThunkActionType => async (dispatch) => {
     try {
+      //@ts-ignore
       await _followUnfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), actionsUsers.unfollowSuccess);
     }
     catch(error) {

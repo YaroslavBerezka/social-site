@@ -1,5 +1,5 @@
 import { IPhotos, IProfile } from "../interfaces/interfaces"
-import { ResponseType, ResultCodes, instance } from "./api"
+import { IResponse, ResultCodes, instance } from "./api"
 
 export const profileAPI = {
     getProfile(userId: number) {
@@ -14,7 +14,7 @@ export const profileAPI = {
     },
     updateStatus(status: string) {
         return  instance
-                    .put<ResponseType>(`profile/status`, {status: status})
+                    .put<IResponse>(`profile/status`, {status: status})
                     .then(response => response.data);
     },
     savePhoto(photoFile: File) {
@@ -27,7 +27,7 @@ export const profileAPI = {
     },
     saveProfile(profile: IProfile) {
         return  instance
-                    .put<ResponseType>(`profile`, profile)
+                    .put<IResponse>(`profile`, profile)
                     .then(response => response.data);
     },
 };
@@ -37,5 +37,5 @@ interface IResponseSavePhoto {
         photos: IPhotos
     }
     resultCode: ResultCodes
-    messages: Array<string>
+    messages: string[]
 };

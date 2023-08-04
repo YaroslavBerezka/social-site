@@ -1,11 +1,11 @@
-import { ResponseType, ResultCodes } from "../api/api"
+import { IResponse, ResultCodes } from "../api/api"
 import { following, unfollowing } from "../api/thunkMW/thunk-users"
 import { usersAPI } from "../api/users-api"
 import { actionsUsers } from "../redux/reducers/users-reducer"
 
 jest.mock("../api/users-api");
 const usersApiMock = usersAPI as jest.Mocked<typeof usersAPI>;
-const result: ResponseType = {
+const result: IResponse = {
     resultCode: ResultCodes.Success,
     messages: [],
     data: {}
